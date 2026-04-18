@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FitZone Gym — Transform Your Body</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="#" class="logo">Fit<span>Zone</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#booking">Book Now</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <span class="icon-sun">&#9728;</span>
+          <span class="icon-moon">&#9790;</span>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="container hero-content">
+      <span class="badge">&#128293; #1 Gym in the City</span>
+      <h1>Transform Your<br /><span class="gradient-text">Body & Mind</span></h1>
+      <p>State-of-the-art equipment, expert trainers, and a community that pushes you to be your best — every single day.</p>
+      <div class="hero-btns">
+        <a href="#booking" class="btn btn-primary">Book Free Trial</a>
+        <a href="#services" class="btn btn-outline">Explore Services</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><strong>2,400+</strong><span>Members</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><strong>50+</strong><span>Classes / Week</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><strong>15+</strong><span>Expert Trainers</span></div>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Scroll to explore</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES ===== -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">What We Offer</span>
+        <h2>Our <span class="gradient-text">Services</span></h2>
+        <p>Everything you need to crush your fitness goals under one roof.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">&#127947;</div>
+          <h3>Personal Training</h3>
+          <p>One-on-one sessions with certified trainers tailored to your specific goals and fitness level.</p>
+          <span class="service-price">From $60 / session</span>
+        </div>
+        <div class="service-card featured">
+          <div class="featured-label">Most Popular</div>
+          <div class="service-icon">&#128170;</div>
+          <h3>Group Classes</h3>
+          <p>High-energy HIIT, yoga, spin, and more. 50+ weekly classes to keep things exciting.</p>
+          <span class="service-price">From $30 / month</span>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">&#129335;</div>
+          <h3>Nutrition Coaching</h3>
+          <p>Custom meal plans and nutritional guidance designed to complement your workouts.</p>
+          <span class="service-price">From $45 / session</span>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">&#129340;</div>
+          <h3>Recovery & Spa</h3>
+          <p>Sauna, ice bath, and massage therapy to help your body recover faster and stronger.</p>
+          <span class="service-price">From $25 / session</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BOOKING ===== -->
+  <section class="section booking-section" id="booking">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Reserve Your Spot</span>
+        <h2>Book an <span class="gradient-text">Appointment</span></h2>
+        <p>Choose a service, pick your slot, and we'll confirm within 1 hour.</p>
+      </div>
+      <div class="booking-wrapper">
+        <form class="booking-form" id="bookingForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fullName">Full Name</label>
+              <input type="text" id="fullName" placeholder="John Smith" required />
+              <span class="error-msg" id="nameError"></span>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" placeholder="+1 234 567 890" required />
+              <span class="error-msg" id="phoneError"></span>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="service">Select Service</label>
+              <select id="service" required>
+                <option value="">-- Choose a service --</option>
+                <option value="Personal Training">Personal Training</option>
+                <option value="Group Class">Group Class</option>
+                <option value="Nutrition Coaching">Nutrition Coaching</option>
+                <option value="Recovery & Spa">Recovery &amp; Spa</option>
+                <option value="Free Trial">Free Trial</option>
+              </select>
+              <span class="error-msg" id="serviceError"></span>
+            </div>
+            <div class="form-group">
+              <label for="bookingDate">Preferred Date</label>
+              <input type="date" id="bookingDate" required />
+              <span class="error-msg" id="dateError"></span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Select Time Slot</label>
+            <div class="time-slots" id="timeSlots">
+              <button type="button" class="slot" data-time="7:00 AM">7:00 AM</button>
+              <button type="button" class="slot" data-time="8:00 AM">8:00 AM</button>
+              <button type="button" class="slot" data-time="9:00 AM">9:00 AM</button>
+              <button type="button" class="slot" data-time="10:00 AM">10:00 AM</button>
+              <button type="button" class="slot" data-time="11:00 AM">11:00 AM</button>
+              <button type="button" class="slot" data-time="12:00 PM">12:00 PM</button>
+              <button type="button" class="slot" data-time="2:00 PM">2:00 PM</button>
+              <button type="button" class="slot" data-time="4:00 PM">4:00 PM</button>
+              <button type="button" class="slot" data-time="6:00 PM">6:00 PM</button>
+              <button type="button" class="slot" data-time="7:00 PM">7:00 PM</button>
+            </div>
+            <span class="error-msg" id="slotError"></span>
+          </div>
+          <div class="form-group">
+            <label for="notes">Additional Notes (optional)</label>
+            <textarea id="notes" rows="3" placeholder="Any injuries, preferences, or questions..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">Confirm Booking &#10003;</button>
+        </form>
+
+        <!-- Booking success card -->
+        <div class="booking-success" id="bookingSuccess" hidden>
+          <div class="success-icon">&#10003;</div>
+          <h3>Booking Confirmed!</h3>
+          <div class="booking-summary" id="bookingSummary"></div>
+          <p class="success-note">We'll send a confirmation to your phone shortly.<br />See you at the gym!</p>
+          <button class="btn btn-outline" id="newBookingBtn">Book Another Session</button>
+        </div>
+
+        <!-- Saved bookings -->
+        <div class="saved-bookings" id="savedBookings">
+          <h4>&#128197; Upcoming Bookings</h4>
+          <div class="bookings-list" id="bookingsList"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="section" id="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Real Stories</span>
+        <h2>What Our <span class="gradient-text">Members Say</span></h2>
+        <p>Over 2,400 members have transformed their lives at FitZone.</p>
+      </div>
+      <div class="swiper testimonials-swiper">
+        <div class="swiper-wrapper">
+
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p>"I lost 30 lbs in 4 months! The trainers are incredibly motivating and the community keeps me accountable. Best investment I've ever made."</p>
+              <div class="testimonial-author">
+                <div class="avatar" style="background: #FF6B35;">S</div>
+                <div>
+                  <strong>Sarah Johnson</strong>
+                  <span>Member since 2023</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p>"The nutrition coaching combined with personal training completely changed my relationship with food and exercise. I feel 10 years younger."</p>
+              <div class="testimonial-author">
+                <div class="avatar" style="background: #7B61FF;">M</div>
+                <div>
+                  <strong>Marcus Williams</strong>
+                  <span>Member since 2022</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p>"Group classes here are unlike anything else. The energy is electric, the instructors are top-notch, and I've made lifelong friends here."</p>
+              <div class="testimonial-author">
+                <div class="avatar" style="background: #00C9A7;">A</div>
+                <div>
+                  <strong>Aisha Patel</strong>
+                  <span>Member since 2024</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p>"After my surgery, I was worried about getting back into fitness. The trainers built a custom recovery program that got me back stronger than ever."</p>
+              <div class="testimonial-author">
+                <div class="avatar" style="background: #F7B731;">D</div>
+                <div>
+                  <strong>David Chen</strong>
+                  <span>Member since 2023</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+              <p>"The facilities are always clean, the equipment is modern, and the staff genuinely care about your progress. This is exactly what a gym should be."</p>
+              <div class="testimonial-author">
+                <div class="avatar" style="background: #FC5C7D;">R</div>
+                <div>
+                  <strong>Rachel Torres</strong>
+                  <span>Member since 2022</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT + MAP ===== -->
+  <section class="section contact-section" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Find Us</span>
+        <h2>Visit <span class="gradient-text">FitZone</span></h2>
+        <p>We're open 7 days a week. Come see the facility for yourself — no commitment required.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon">&#128205;</div>
+            <div>
+              <strong>Address</strong>
+              <p>123 Fitness Avenue, Downtown<br />New York, NY 10001</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">&#128336;</div>
+            <div>
+              <strong>Hours</strong>
+              <p>Mon–Fri: 5:00 AM – 11:00 PM<br />Sat–Sun: 7:00 AM – 9:00 PM</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">&#128222;</div>
+            <div>
+              <strong>Phone</strong>
+              <p>+1 (555) 123-4567</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">&#128140;</div>
+            <div>
+              <strong>Email</strong>
+              <p>hello@fitzoneygym.com</p>
+            </div>
+          </div>
+          <a href="https://wa.me/15551234567?text=Hi%20FitZone!%20I'd%20like%20to%20book%20a%20session."
+             class="btn btn-whatsapp" target="_blank" rel="noopener">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            Chat on WhatsApp
+          </a>
+        </div>
+        <div class="map-wrapper">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.9663095343008!2d-74.00425878459418!3d40.74076684379132!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sChelsea%2C%20New%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1617000000000!5m2!1sen!2sus"
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade" title="FitZone location map">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="#" class="logo">Fit<span>Zone</span></a>
+        <p>Building stronger bodies and minds since 2018.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#booking">Book Now</a></li>
+          <li><a href="#testimonials">Reviews</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Follow Us</h4>
+        <ul>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">YouTube</a></li>
+          <li><a href="#">TikTok</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 FitZone Gym. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ===== WHATSAPP FLOATING BUTTON ===== -->
+  <a href="https://wa.me/15551234567?text=Hi%20FitZone!%20I'd%20like%20to%20know%20more%20about%20your%20services."
+     class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+    <span class="whatsapp-tooltip">Chat with us!</span>
+  </a>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
