@@ -2,6 +2,8 @@
 
 A modern, fully responsive gym website built with pure **HTML, CSS & JavaScript** — no frameworks, no backend needed. Designed as a freelance portfolio project to showcase smart features clients actually want.
 
+Link of the live app : https://megana-smart-local-business-website.netlify.app/ 
+
 ---
 
 ## Live Features
